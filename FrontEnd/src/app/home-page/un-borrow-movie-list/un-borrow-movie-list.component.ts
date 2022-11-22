@@ -14,7 +14,7 @@ export class UnBorrowMovieListComponent implements OnInit {
   constructor(private movieService : MovieService) { }
 
   ngOnInit(): void {
-    this.movieService.findAllUnBorrowMovies().subscribe(movies => {
+    this.movieService.findBorrowMovies().subscribe(movies => {
   this.unborrowMovies = movies;
   console.log(this.unborrowMovies)
     });

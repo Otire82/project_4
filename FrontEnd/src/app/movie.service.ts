@@ -37,4 +37,16 @@ export class MovieService {
     };
     return this.http.put(MovieService.API_URL +index, movie, httpOptions);
   }
+
+  createMovie( movie: Movie) {
+    const httpOptions = {
+      headers: new HttpHeaders({
+        'Content-Type': 'application/json'
+      }),
+      body: movie
+    };
+
+    return this.http.post(MovieService.API_URL, movie, httpOptions);
+
+  }
 }
