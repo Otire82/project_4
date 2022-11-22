@@ -28,4 +28,32 @@ public class Movie {
 
     private Boolean isBorrow;
 
+    public Movie(Integer id, String title, String picture, String genre, String descriptif) {
+        this.setId(id);
+        this.setTitle(title);
+        this.setPicture(picture);
+        this.setGenre(genre);
+        this.setDescriptif(descriptif);
+    }
+
+    public int getId() {return id;}
+
+    public void setId(int id) { this.id = id; }
+
+    public String getTitle() { return title; }
+
+    public void setTitle(String title ) { this.title = title; }
+
+    public String getPicture() { return picture; }
+
+    public void setPicture(String picture) { this.picture = picture; }
+
+    public String getGenre() { return genre; }
+
+    public void setGenre(String genre) { this.genre = genre; }
+
+    public String getDescriptif() { return descriptif; }
+
+    public void setDescriptif(String descriptif) { this.descriptif = descriptif; }
+
 }
