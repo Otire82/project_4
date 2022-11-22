@@ -10,5 +10,9 @@ import fr.codewise.movieselect.entities.Movie;
 @Repository
 public interface MovieRepository extends JpaRepository<Movie, Integer> {
 
-    List<Movie> findBorrowMovies(Boolean isBorrow);
+    List<Movie> findAllMoviesByIsBorrowTrue();
+
+    // {
+    //     return this.findAll().stream().filter(movie -> movie.getIsBorrow()==isBorrow).toList();
+    // }
 }

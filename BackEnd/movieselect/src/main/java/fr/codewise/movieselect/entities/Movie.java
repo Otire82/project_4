@@ -34,6 +34,7 @@ public class Movie {
         this.setPicture(picture);
         this.setGenre(genre);
         this.setDescriptif(descriptif);
+        // this.setIsBorrow(isBorrow);
     }
 
     public int getId() {return id;}
@@ -55,5 +56,9 @@ public class Movie {
     public String getDescriptif() { return descriptif; }
 
     public void setDescriptif(String descriptif) { this.descriptif = descriptif; }
+
+    // public Boolean getIsBorrow() { return isBorrow; }
+
+    // public void setIsBorrow(Boolean isBorrow) { this.isBorrow = isBorrow; }
 
 }

@@ -23,24 +23,29 @@ import fr.codewise.movieselect.repositories.MovieRepository;
 public class MovieController {
 
     @Autowired
-    MovieRepository movieRepository;
+    private MovieRepository movieRepository;
     
-    @GetMapping("/movies/borrow")
-    public List<Movie> findBorrowMovies(Boolean isBorrow) {
-        return this.movieRepository.findBorrowMovies(isBorrow);
+    @GetMapping("/borrow")
+    public List<Movie> findBorrowMovies() {
+        return this.movieRepository.findAllMoviesByIsBorrowTrue();
     }
 
-    @GetMapping("/movies/{id}")
+    @GetMapping("/{id}")
     public Movie show(@PathVariable int id){
         return movieRepository.findById(id).get();
     }
 
-    @PostMapping("/movies")
+    @GetMapping
+    public List<Movie> findAllMovies() {
+        return this.movieRepository.findAll();
+    }
+
+    @PostMapping
     public Movie createMovie(@RequestBody Movie movie) {
         return movieRepository.save(movie);
     }
 
-     @PutMapping("/movies/{id}")
+     @PutMapping("/{id}")
     public Movie update(@PathVariable int id, @RequestBody Movie movie) {
         Movie movieToUpdate = movieRepository.findById(id).get();
         movieToUpdate.setTitle(movie.getTitle());
@@ -50,7 +55,7 @@ public class MovieController {
         return movieRepository.save(movieToUpdate);
     }
 
-    @DeleteMapping("movies/{id}")
+    @DeleteMapping("/{id}")
     public boolean delete(@PathVariable int id) {
         movieRepository.deleteById(id);
         return true;
