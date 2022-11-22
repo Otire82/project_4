@@ -25,7 +25,7 @@ public class MovieController {
     @Autowired
     MovieRepository movieRepository;
     
-    @GetMapping
+    @GetMapping("/movies/borrow")
     public List<Movie> findBorrowMovies(Boolean isBorrow) {
         return this.movieRepository.findBorrowMovies(isBorrow);
     }
