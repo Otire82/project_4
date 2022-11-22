@@ -7,8 +7,8 @@ import { AppComponent } from './app.component';
 import { HeaderComponent } from './header/header.component';
 import { MoviesComponent } from './movies/movies.component';
 import { HomePageComponent } from './home-page/home-page.component';
-import { UnBorrowMovieListComponent } from './home-page/un-borrow-movie-list/un-borrow-movie-list.component';
-import { UnborrowMovieItemComponent } from './home-page/un-borrow-movie-list/unborrow-movie-item/unborrow-movie-item.component';
+import { UnborrowMovieListComponent } from './home-page/unborrow-movie-list/unborrow-movie-list.component';
+import { UnborrowMovieItemComponent } from './home-page/unborrow-movie-list/unborrow-movie-item/unborrow-movie-item.component';
 
 @NgModule({
   declarations: [
@@ -16,7 +16,7 @@ import { UnborrowMovieItemComponent } from './home-page/un-borrow-movie-list/unb
     HeaderComponent,
     MoviesComponent,
     HomePageComponent,
-    UnBorrowMovieListComponent,
+    UnborrowMovieListComponent,
     UnborrowMovieItemComponent
   ],
   imports: [
