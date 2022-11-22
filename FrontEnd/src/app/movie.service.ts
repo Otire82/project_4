@@ -1,4 +1,4 @@
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 import { Movie } from './models/movie';
@@ -12,11 +12,29 @@ export class MovieService {
 
   constructor(private http: HttpClient) { }
 
-  getAll():Observable<Movie[]> {
+  getAllMovies():Observable<Movie[]> {
     return this.http.get<Movie[]>(MovieService.API_URL);
   }
 
-  findAllUnBorrowMovies(): Observable<Movie[]>{
+  findBorrowMovies(): Observable<Movie[]>{
    return this.http.get<Movie[]>(MovieService.API_URL +'?isBorrow=false');
+  }
+
+  findMovie(index: string): Observable<Movie> {
+    return this.http.get<Movie>(MovieService.API_URL +index);
+  }
+
+    deleteMovie(index: string): Observable<Movie> {
+    return this.http.get<Movie>(MovieService.API_URL +index);
+  }
+
+  updateMovie(index: string, movie: Movie) {
+    const httpOptions = {
+      headers: new HttpHeaders({
+        'Content-Type': 'application/json'
+      }),
+      body: movie
+    };
+    return this.http.put(MovieService.API_URL +index, movie, httpOptions);
   }
 }
