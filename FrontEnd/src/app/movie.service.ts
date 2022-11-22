@@ -8,7 +8,7 @@ import { Movie } from './models/movie';
 })
 export class MovieService {
 
-  private static readonly API_URL = 'http://localhost:8080/movies';
+  private static readonly API_URL = 'http://localhost:8080/movies/';
 
   constructor(private http: HttpClient) { }
 
@@ -17,25 +17,25 @@ export class MovieService {
   }
 
   findBorrowMovies(): Observable<Movie[]>{
-   return this.http.get<Movie[]>(MovieService.API_URL +'?isBorrow=false');
+   return this.http.get<Movie[]>(MovieService.API_URL + "borrow");
+  } 
+
+  findMovie(id: number): Observable<Movie> {
+    return this.http.get<Movie>(MovieService.API_URL + id);
   }
 
-  findMovie(index: string): Observable<Movie> {
-    return this.http.get<Movie>(MovieService.API_URL +index);
+    deleteMovie(id: number): Observable<Movie> {
+    return this.http.get<Movie>(MovieService.API_URL + id);
   }
 
-    deleteMovie(index: string): Observable<Movie> {
-    return this.http.get<Movie>(MovieService.API_URL +index);
-  }
-
-  updateMovie(index: string, movie: Movie) {
+  updateMovie(id: number, movie: Movie) {
     const httpOptions = {
       headers: new HttpHeaders({
         'Content-Type': 'application/json'
       }),
       body: movie
     };
-    return this.http.put(MovieService.API_URL +index, movie, httpOptions);
+    return this.http.put(MovieService.API_URL + id, movie, httpOptions);
   }
 
   createMovie( movie: Movie) {
