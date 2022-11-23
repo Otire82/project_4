@@ -13,7 +13,7 @@ import { MoviePageComponent } from './movie-page/movie-page.component';
 import { BorrowPageComponent } from './borrow-page/borrow-page.component';
 import { UpdatePageComponent } from './update-page/update-page.component';
 import { CreatePageComponent } from './create-page/create-page.component';
-import { UnborrowMovieItemComponent } from './borrow-page/unborrow-movie-item/unborrow-movie-item.component';
+import { UnborrowMovieItemComponent } from './borrow-page/unborrow-movie-list/unborrow-movie-item/unborrow-movie-item.component';
 import { MovieListComponent } from './all-movies-page/movie-list/movie-list.component';
 import { MovieListItemComponent } from './all-movies-page/movie-list-item/movie-list-item.component';
 import { ReactiveFormsModule } from '@angular/forms';

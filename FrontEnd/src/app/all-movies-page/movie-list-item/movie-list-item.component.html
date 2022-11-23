@@ -13,8 +13,8 @@
 <td>
     <a href="#" [routerLink]="['/movie/', movie.id]" ><button>Detail</button></a>
 </td>
-<td><button (click)="handleDelete()">Delete</button></td>
+<td><button (click)="handleDelete()">Supprimer</button></td>
 <td>
-  <a [routerLink]="['/update', movie.id]"><button>Update</button></a>
+  <a [routerLink]="['/update', movie.id]"><button>Mettre a jour</button></a>
 </td>
-<td><button (click)="addBorrow()">Borrow</button></td>
+<!-- <td><button (click)="addBorrow(movie?.id)">Emprunter</button></td> -->

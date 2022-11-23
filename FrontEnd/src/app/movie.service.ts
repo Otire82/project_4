@@ -20,6 +20,10 @@ export class MovieService {
    return this.http.get<Movie[]>(MovieService.API_URL + "borrow");
   } 
 
+  // toggleBorrowMovies(id: number): Observable<Movie[]> {
+  //   return this.http.post<Movie>(MovieService.API_URL + "borrow");
+  // } 
+
   findMovie(id: number): Observable<Movie> {
     return this.http.get<Movie>(MovieService.API_URL + id);
   }
