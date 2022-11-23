@@ -1,20 +1,17 @@
-<tbody>
-  <tr>
-    <td>{{ movie.id }}</td>
-    <td>{{ movie.title }}</td>
-    <td>
-      <img
-        class="picture"
-        src="{{ movie.picture }}"
-        alt="{{ movie.title }}"
-        width="400px"
-      />
-    </td>
-    <td>{{ movie.genre }}</td>
-    <td>{{ movie.descriptif }}</td>
-    <td><button (click)="handleDelete()">Delete</button></td>
-    <td>
-      <a [routerLink]="['/update', movie.id]"><button>Update</button></a>
-    </td>
-  </tr>
-</tbody>
+<td>{{ movie.id }}</td>
+<td>{{ movie.title }}</td>
+<td>
+  <img
+    class="picture"
+    src="{{ movie.picture }}"
+    alt="{{ movie.title }}"
+    width="400px"
+  />
+</td>
+<td>{{ movie.genre }}</td>
+<td>{{ movie.descriptif }}</td>
+<td><button (click)="handleDelete()">Delete</button></td>
+<td>
+  <a [routerLink]="['/update', movie.id]"><button>Update</button></a>
+</td>
+<td><button (click)="addBorrow()">Borrow</button></td>

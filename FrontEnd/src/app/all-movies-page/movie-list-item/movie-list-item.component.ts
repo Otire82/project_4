@@ -25,4 +25,8 @@ export class MovieListItemComponent implements OnInit {
     this.movieService.deleteMovie(this.movie.id || 0).subscribe(() => this.refresh.emit());
     console.log('deleteMovie' + this.movie.id);
   }
+
+  addBorrow(): void{
+    this.movieService.findBorrowMovies().subscribe();
+  }
 }
