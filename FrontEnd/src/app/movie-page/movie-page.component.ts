@@ -7,9 +7,11 @@ import { Component, OnInit } from '@angular/core';
 })
 export class MoviePageComponent implements OnInit {
 
+ 
   constructor() { }
 
   ngOnInit(): void {
+    
   }
 
 }

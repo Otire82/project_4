@@ -14,6 +14,8 @@ import { BorrowPageComponent } from './borrow-page/borrow-page.component';
 import { UpdatePageComponent } from './update-page/update-page.component';
 import { CreatePageComponent } from './create-page/create-page.component';
 import { UnborrowMovieItemComponent } from './borrow-page/unborrow-movie-item/unborrow-movie-item.component';
+import { MovieListComponent } from './all-movies-page/movie-list/movie-list.component';
+import { MovieListItemComponent } from './all-movies-page/movie-list-item/movie-list-item.component';
 
 @NgModule({
   declarations: [
@@ -27,7 +29,9 @@ import { UnborrowMovieItemComponent } from './borrow-page/unborrow-movie-item/un
     MoviePageComponent,
     BorrowPageComponent,
     UpdatePageComponent,
-    CreatePageComponent
+    CreatePageComponent,
+    MovieListComponent,
+    MovieListItemComponent
   ],
   imports: [
     BrowserModule,
