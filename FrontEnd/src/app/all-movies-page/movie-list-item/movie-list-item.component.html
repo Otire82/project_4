@@ -1,27 +1,20 @@
-<div>
-    <a [routerLink]="['/create']"><button>ADD NEW MOVIE</button></a>
-</div>
-<table>
-    <thead>
-        <tr>
-            <th>id</th>
-            <th>title</th>
-            <th>picture</th>
-            <th>genre</th>
-            <th>descriptif</th>
-            <th>delete</th>
-            <th>update</th>
-        </tr>
-    </thead>
-    <tbody>
-        <tr>
-            <td >{{movie.id}}</td>
-            <td >{{movie.title}}</td>
-            <td ><img class="picture" src="{{movie.picture}}" alt="{{movie.title}}" width="400px"/></td>
-            <td >{{movie.genre}}</td>
-            <td >{{movie.descriptif}}</td>
-            <td ><button (click)="handleDelete">Delete</button></td>
-            <td ><a [routerLink]="['/update',movie.id]"><button>Update</button></a></td>
-        </tr>
-    </tbody>
-</table>
+<tbody>
+  <tr>
+    <td>{{ movie.id }}</td>
+    <td>{{ movie.title }}</td>
+    <td>
+      <img
+        class="picture"
+        src="{{ movie.picture }}"
+        alt="{{ movie.title }}"
+        width="400px"
+      />
+    </td>
+    <td>{{ movie.genre }}</td>
+    <td>{{ movie.descriptif }}</td>
+    <td><button (click)="handleDelete()">Delete</button></td>
+    <td>
+      <a [routerLink]="['/update', movie.id]"><button>Update</button></a>
+    </td>
+  </tr>
+</tbody>

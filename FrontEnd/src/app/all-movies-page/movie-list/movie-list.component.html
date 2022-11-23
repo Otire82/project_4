@@ -1,5 +1,24 @@
 <div>
-    <ul>
-        <app-movie-list-item *ngFor="let movie of moviesList" [movie]="movie"></app-movie-list-item>
-    </ul>
+  <div>
+    <a [routerLink]="['/create']"><button>ADD NEW MOVIE</button></a>
+  </div>
+  <table>
+    <thead>
+      <tr>
+        <th>id</th>
+        <th>title</th>
+        <th>picture</th>
+        <th>genre</th>
+        <th>descriptif</th>
+        <th>delete</th>
+        <th>update</th>
+      </tr>
+    </thead>
+
+    <app-movie-list-item
+      *ngFor="let movie of moviesList"
+      [movie]="movie"
+      (refresh)="refreshMoviesList()"
+    ></app-movie-list-item>
+  </table>
 </div>

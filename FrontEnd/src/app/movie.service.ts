@@ -24,8 +24,8 @@ export class MovieService {
     return this.http.get<Movie>(MovieService.API_URL + id);
   }
 
-  deleteMovie(id: number): Observable<Movie> {
-    return this.http.get<Movie>(MovieService.API_URL + id);
+  deleteMovie(id: number): Observable<void> {
+    return this.http.delete<void>(MovieService.API_URL + id);
   }
 
   updateMovie(id: number, movie: Movie) {

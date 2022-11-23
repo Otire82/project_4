@@ -5,18 +5,20 @@ import { MovieService } from 'src/app/movie.service';
 @Component({
   selector: 'app-movie-list',
   templateUrl: './movie-list.component.html',
-  styleUrls: ['./movie-list.component.css']
+  styleUrls: ['./movie-list.component.css'],
 })
 export class MovieListComponent implements OnInit {
-
   moviesList: Movie[] = [];
-  
-  constructor(private movieService : MovieService) { }
+
+  constructor(private movieService: MovieService) {}
 
   ngOnInit(): void {
-    this.movieService.getAllMovies().subscribe(movies => {
+    this.refreshMoviesList();
+  }
+
+  refreshMoviesList() {
+    this.movieService.getAllMovies().subscribe((movies) => {
       this.moviesList = movies;
     });
   }
-
 }

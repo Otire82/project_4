@@ -4,5 +4,5 @@ export interface Movie {
     picture: string;
     genre: string;
     descriptif: string;
-    isBorrow: boolean;
+    isBorrow?: boolean;
 }

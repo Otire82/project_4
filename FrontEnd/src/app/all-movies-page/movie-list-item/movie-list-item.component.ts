@@ -1,4 +1,4 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 import { Movie } from 'src/app/models/movie';
 import { MovieService } from 'src/app/movie.service';
 
@@ -11,6 +11,9 @@ export class MovieListItemComponent implements OnInit {
   
     @Input()
   movie!: Movie;
+
+  @Output()
+  refresh: EventEmitter<void> = new EventEmitter();
   
   constructor(private movieService: MovieService) { }
 
@@ -18,8 +21,8 @@ export class MovieListItemComponent implements OnInit {
     
   }
 
-  async handleDelete(id: number): Promise<void> {
-    this.movieService.deleteMovie(id);
-    console.log('deleteMovie' + id);
+  handleDelete(): void {
+    this.movieService.deleteMovie(this.movie.id || 0).subscribe(() => this.refresh.emit());
+    console.log('deleteMovie' + this.movie.id);
   }
 }
