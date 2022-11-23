@@ -1,2 +1,86 @@
 <p>update-page works!</p>
 <h2>Update Movie</h2>
+<a href="#" routerLink="/movies" class="btn btn-primary">Back</a>
+
+<form [formGroup]="form" (ngSubmit)="submit()">
+  <div class="form-group">
+    <label for="title">Title:</label>
+    <input
+      formControlName="title"
+      id="title"
+      type="text"
+      [(ngModel)]="movie.title"
+      class="form-control"
+    />
+
+    <div
+      *ngIf="f['title'].touched && f['title'].invalid"
+      class="alert alert-danger"
+    >
+      <div *ngIf="f['title'].errors && f['title'].errors['required']">
+        Title is required.
+      </div>
+    </div>
+  </div>
+  <div class="form-group">
+    <label for="picture">Picture</label>
+    <input
+      formControlName="picture"
+      id="picture"
+      type="url"
+      [(ngModel)]="movie.picture"
+      class="form-control"
+    />
+
+    <div
+      *ngIf="f['picture'].touched && f['picture'].invalid"
+      class="alert alert-danger"
+    >
+      <div *ngIf="f['picture'].errors && f['picture'].errors['required']">
+        Url is required.
+      </div>
+    </div>
+  </div>
+  <div class="form-group">
+    <label for="genre">Genre</label>
+    <input
+      formControlName="genre"
+      id="genre"
+      type="url"
+      [(ngModel)]="movie.genre"
+      class="form-control"
+    />
+
+    <div
+      *ngIf="f['genre'].touched && f['genre'].invalid"
+      class="alert alert-danger"
+    >
+      <div *ngIf="f['genre'].errors && f['genre'].errors['required']">
+        Genre is required.
+      </div>
+    </div>
+  </div>
+  <div class="form-group">
+    <label for="descriptif">Descriptif</label>
+    <textarea
+      formControlName="descriptif"
+      id="descriptif"
+      type="url"
+      [(ngModel)]="movie.descriptif"
+      class="form-control"
+    >
+    </textarea>
+    <div
+      *ngIf="f['descriptif'].touched && f['descriptif'].invalid"
+      class="alert alert-danger"
+    >
+      <div *ngIf="f['descriptif'].errors && f['descriptif'].errors['required']">
+        Descriptif is required.
+      </div>
+    </div>
+  </div>
+
+  <button class="btn btn-primary" type="submit" [disabled]="!form.valid">
+    Update
+  </button>
+</form>
