@@ -1,0 +1,28 @@
+<td class="list">{{ movie.id }}</td>
+<td class="list">{{ movie.title }}</td>
+<td class="list">
+  <img
+    class="picture"
+    src="{{ movie.picture }}"
+    alt="{{ movie.title }}"
+    width="400px"
+  />
+</td>
+<td class="list">{{ movie.genre }}</td>
+<td class="list descriptif">{{ movie.descriptif }}</td>
+<td class="list">
+  <a href="#" [routerLink]="['/movie/', movie.id]"
+    ><button class="btn">DETAIL</button></a
+  >
+</td>
+<td class="list">
+  <button class="btn" (click)="handleDelete()">SUPPRIMER</button>
+</td>
+<td class="list">
+  <a [routerLink]="['/update', movie.id]"
+    ><button class="btn">METTRE A JOUR</button></a
+  >
+</td>
+<td class="list" *ngIf="movie.id">
+  <button class="btn" (click)="addBorrow(movie.id)">EMPRUNTER</button>
+</td>

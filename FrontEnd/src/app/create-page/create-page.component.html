@@ -1,0 +1,86 @@
+<div class="container">
+  <h2>Ajouter un nouveau film</h2>
+  <form
+    class="form"
+    [formGroup]="movieForm"
+    (ngSubmit)="thisForm.valid && createMovie()"
+    #thisForm="ngForm"
+  >
+    <div class="form-style">
+      <label for="title">Titre : </label>
+      <input
+        type="text"
+        name="title"
+        class="form-control"
+        placeholder="Titre"
+        formControlName="title"
+      />
+      <div
+        *ngIf="
+          movieForm.get('title')?.touched && movieForm.get('title')?.errors
+        "
+      >
+        <small class="invalidInput">Le titre est requis.</small>
+      </div>
+    </div>
+    <div class="form-style">
+      <label for="picture">Lien de l'image : </label>
+      <input
+        type="url"
+        name="picture"
+        class="form-control"
+        placeholder="Lien de l'image"
+        formControlName="picture"
+      />
+      <div
+        *ngIf="
+          movieForm.get('picture')?.touched && movieForm.get('picture')?.errors
+        "
+      >
+        <small class="invalidInput">Le lien est requis.</small>
+      </div>
+    </div>
+    <div class="form-style">
+      <label for="genre">Genre du film : </label>
+      <input
+        type="text"
+        name="genre"
+        class="form-control"
+        placeholder="Genre"
+        formControlName="genre"
+      />
+      <div
+        *ngIf="
+          movieForm.get('genre')?.touched && movieForm.get('genre')?.errors
+        "
+      >
+        <small class="invalidInput">Le genre est requis.</small>
+      </div>
+    </div>
+    <div class="form-style">
+      <label for="descriptif">Synopsis : </label>
+      <textarea
+        type="text"
+        name="descriptif"
+        class="text-control"
+        placeholder="Synopsis"
+        formControlName="descriptif"
+      ></textarea>
+      <div
+        *ngIf="
+          movieForm.get('descriptif')?.touched &&
+          movieForm.get('descriptif')?.errors
+        "
+      >
+        <small class="invalidInput">Le synopsis est requis.</small>
+      </div>
+    </div>
+    <button
+      [ngClass]="{ formDisabled: movieForm.invalid }"
+      type="submit"
+      class="btn"
+    >
+      VALIDER
+    </button>
+  </form>
+</div>

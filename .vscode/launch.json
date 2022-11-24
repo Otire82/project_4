@@ -3,6 +3,19 @@
   "version": "0.2.0",
   "configurations": [
     {
+      "type": "java",
+      "name": "Launch MovieselectApplication",
+      "request": "launch",
+      "mainClass": "fr.codewise.movieselect.MovieselectApplication",
+      "projectName": ""
+    },
+    {
+      "type": "java",
+      "name": "Launch MovieselctApplication",
+      "request": "launch",
+      "mainClass": "fr.codewise.movieselct.MovieselctApplication"
+    },
+    {
       "name": "ng serve",
       "type": "pwa-chrome",
       "request": "launch",

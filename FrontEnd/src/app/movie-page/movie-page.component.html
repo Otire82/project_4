@@ -1,0 +1,27 @@
+<div class="movieContainer">
+  <h2>Un film</h2>
+
+  <hr />
+  <div *ngIf="movie">
+    <table>
+      <tbody>
+        <td>{{ movie.id }}</td>
+        <td>{{ movie.title }}</td>
+        <td>
+          <img
+            class="picture"
+            src="{{ movie.picture }}"
+            alt="{{ movie.title }}"
+            width="400px"
+          />
+        </td>
+        <td>{{ movie.genre }}</td>
+        <td>{{ movie.descriptif }}</td>
+      </tbody>
+    </table>
+  </div>
+
+  <br />
+  <br />
+  <button (click)="list()" class="btn">RETOUR</button><br />
+</div>
