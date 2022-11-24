@@ -6,28 +6,33 @@ import { MovieService } from '../movie.service';
 @Component({
   selector: 'app-create-page',
   templateUrl: './create-page.component.html',
-  styleUrls: ['./create-page.component.css']
+  styleUrls: ['./create-page.component.css'],
 })
 export class CreatePageComponent {
-  movieForm = this.formBuilder.group({
-  
-    title: ['', Validators.required],
-    picture: ['', Validators.required],
-    genre: ['', Validators.required],
-    descriptif: ['', Validators.required],
-  }, {nonNullable: true});
+  movieForm = this.formBuilder.group(
+    {
+      title: ['', Validators.required],
+      picture: ['', Validators.required],
+      genre: ['', Validators.required],
+      descriptif: ['', Validators.required],
+    },
+    { nonNullable: true }
+  );
 
   @Output() public sendMovie: EventEmitter<Movie> = new EventEmitter<Movie>();
 
-  constructor(private formBuilder: FormBuilder, private movieService: MovieService) { }
+  constructor(
+    private formBuilder: FormBuilder,
+    private movieService: MovieService
+  ) {}
 
   createMovie(): void {
-    this.movieService.createMovie({
-      ...this.movieForm.value,
-      id: null,
-    }
-    ).subscribe(movie => alert('Votre film a été ajouté'));
+    this.movieService
+      .createMovie({
+        ...this.movieForm.value,
+        id: null,
+      })
+      .subscribe((movie) => alert('Votre film a été ajouté'));
     this.movieForm.reset();
   }
-
 }

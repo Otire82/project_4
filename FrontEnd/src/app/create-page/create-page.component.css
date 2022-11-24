@@ -1,11 +1,23 @@
 .container {
   text-align: center;
-}
-.formDisabled {
-  background-color: rgb(179, 179, 179);
-  cursor: not-allowed;
+  margin-top: 10%;
 }
 
+h2{
+  font-size: 30px;
+  border: solid 10px rgb(230, 135, 46);
+  border-radius: 10%;
+  width: 30%;
+  margin: auto;
+  margin-bottom: 50px;
+  padding-top: 10px;
+  padding-bottom: 10px;
+}
+
+.formDisabled {
+  background-color: rgb(230, 135, 46);
+  cursor: not-allowed;
+}
 
 .form-style {
   display: flex;
@@ -13,14 +25,25 @@
   align-items: center;
   justify-content: center;
 }
+
 .form-style input {
-  width: 250px;
+  min-width: 500px;
   height: 30px;
+  font-size: 16px;
+  text-align: center;
+  margin-bottom: 30px;
+  border-radius: 5px;
+  border: 2px solid rgb(230, 135, 46);
+}
+
+.form-style textarea {
+  min-width: 500px;
+  height: 300px;
   font-size: 14px;
   text-align: center;
-  margin-bottom: 10px;
+  margin-bottom: 30px;
   border-radius: 5px;
-  border: 1px solid rgb(176, 134, 134);
+  border: 2px solid rgb(230, 135, 46);
 }
 .invalidInput {
   color: red;
