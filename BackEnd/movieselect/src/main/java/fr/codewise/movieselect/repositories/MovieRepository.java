@@ -12,7 +12,4 @@ public interface MovieRepository extends JpaRepository<Movie, Integer> {
 
     List<Movie> findAllMoviesByIsBorrowTrue();
 
-    // {
-    //     return this.findAll().stream().filter(movie -> movie.getIsBorrow()==isBorrow).toList();
-    // }
 }

@@ -11,7 +11,6 @@ import { MovieService } from '../movie.service';
 })
 export class UpdatePageComponent implements OnInit {
   id!: number;
-  movie!: Movie;
   form!: FormGroup;
 
   constructor(
@@ -23,14 +22,16 @@ export class UpdatePageComponent implements OnInit {
   ngOnInit(): void {
     this.id = this.route.snapshot.params['id'];
     this.movieService.findMovie(this.id).subscribe((movie: Movie) => {
-      this.movie = movie;
+      this.form.setValue(movie);
     });
 
     this.form = new FormGroup({
+      id: new FormControl(''),
       title: new FormControl('', [Validators.required]),
       picture: new FormControl('', [Validators.required]),
       genre: new FormControl('', [Validators.required]),
       descriptif: new FormControl('', [Validators.required]),
+      isBorrow: new FormControl(''),
     });
   }
   get f() {

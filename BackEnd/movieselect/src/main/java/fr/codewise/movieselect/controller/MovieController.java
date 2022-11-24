@@ -47,11 +47,14 @@ public class MovieController {
 
      @PutMapping("/{id}")
     public Movie update(@PathVariable int id, @RequestBody Movie movie) {
+        System.out.println(movie);
+         System.out.println("toto");
         Movie movieToUpdate = movieRepository.findById(id).get();
         movieToUpdate.setTitle(movie.getTitle());
         movieToUpdate.setPicture(movie.getPicture());
         movieToUpdate.setGenre(movie.getGenre());
         movieToUpdate.setDescriptif(movie.getDescriptif());
+        movieToUpdate.setIsBorrow(movie.getIsBorrow());
         return movieRepository.save(movieToUpdate);
     }
 

@@ -10,19 +10,19 @@
         <th>picture</th>
         <th>genre</th>
         <th>descriptif</th>
+        <th>Detail</th>
         <th>delete</th>
         <th>update</th>
+        <th>emprunter</th>
       </tr>
     </thead>
     <tbody class="list">
-      <tr class="list">
-        <app-movie-list-item
-          *ngFor="let movie of moviesList"
-          [movie]="movie"
-          (refresh)="refreshMoviesList()"
-        >
-    </app-movie-list-item>
-      </tr>
+      <tr app-movie-list-item
+        *ngFor="let movie of moviesList"
+        [movie]="movie"
+        (refresh)="refreshMoviesList()"
+      >
+    </tr>
     </tbody>
   </table>
 </div>

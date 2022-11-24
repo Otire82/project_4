@@ -5,19 +5,23 @@ import { MovieService } from 'src/app/movie.service';
 @Component({
   selector: 'app-unborrow-movie-list',
   templateUrl: './unborrow-movie-list.component.html',
-  styleUrls: ['./unborrow-movie-list.component.css']
+  styleUrls: ['./unborrow-movie-list.component.css'],
 })
 export class UnborrowMovieListComponent implements OnInit {
+  unborrowMovies: Movie[] = [];
 
-  unborrowMovies :Movie[] = [];
-
-  constructor(private movieService : MovieService) { }
+  constructor(private movieService: MovieService) {}
 
   ngOnInit(): void {
-    this.movieService.findBorrowMovies().subscribe(movies => {
-  this.unborrowMovies = movies;
-  console.log(this.unborrowMovies)
+    this.movieService.findBorrowMovies().subscribe((movies) => {
+      this.unborrowMovies = movies;
+      console.log(this.unborrowMovies);
     });
   }
 
+  refreshMoviesList() {
+    this.movieService.findBorrowMovies().subscribe((movies) => {
+      this.unborrowMovies = movies;
+    });
+  }
 }

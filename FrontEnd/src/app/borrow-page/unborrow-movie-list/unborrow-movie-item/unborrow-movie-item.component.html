@@ -4,6 +4,6 @@
         <p>{{ movie.genre}}</p>
         <p>{{ movie.descriptif }} </p>
         <img class="picture" src="{{movie.picture}}" alt="{{movie.title}}" width="500px" />
-       
+        <td *ngIf="movie.id"><button (click)="deleteBorrow(movie.id)">Rendre</button></td>
     </li>
 </ul>

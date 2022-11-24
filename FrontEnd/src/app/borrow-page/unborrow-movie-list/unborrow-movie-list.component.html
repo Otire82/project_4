@@ -1,5 +1,9 @@
 <div>
-    <ul>
-        <app-unborrow-movie-item *ngFor="let movie of unborrowMovies" [movie]="movie"></app-unborrow-movie-item>
-    </ul>
-</div>> 
+  <ul>
+    <app-unborrow-movie-item
+      *ngFor="let movie of unborrowMovies"
+      [movie]="movie"
+      (refresh)="refreshMoviesList()"
+    ></app-unborrow-movie-item>
+  </ul>
+</div>
