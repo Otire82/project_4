@@ -4,25 +4,20 @@ import { Observable } from 'rxjs';
 import { Movie } from './models/movie';
 
 @Injectable({
-  providedIn: 'root'
+  providedIn: 'root',
 })
 export class MovieService {
-
   private static readonly API_URL = 'http://localhost:8080/movies/';
 
-  constructor(private http: HttpClient) { }
+  constructor(private http: HttpClient) {}
 
-  getAllMovies():Observable<Movie[]> {
+  getAllMovies(): Observable<Movie[]> {
     return this.http.get<Movie[]>(MovieService.API_URL);
   }
 
-  findBorrowMovies(): Observable<Movie[]>{
-   return this.http.get<Movie[]>(MovieService.API_URL + "borrow");
-  } 
-
-  // toggleBorrowMovies(id: number): Observable<Movie[]> {
-  //   return this.http.post<Movie>(MovieService.API_URL + "borrow");
-  // } 
+  findBorrowMovies(): Observable<Movie[]> {
+    return this.http.get<Movie[]>(MovieService.API_URL + 'borrow');
+  }
 
   findMovie(id: number): Observable<Movie> {
     return this.http.get<Movie>(MovieService.API_URL + id);
@@ -35,22 +30,21 @@ export class MovieService {
   updateMovie(id: number, movie: Movie) {
     const httpOptions = {
       headers: new HttpHeaders({
-        'Content-Type': 'application/json'
+        'Content-Type': 'application/json',
       }),
-      body: movie
+      body: movie,
     };
     return this.http.put(MovieService.API_URL + id, movie, httpOptions);
   }
 
-  createMovie( movie: Movie) {
+  createMovie(movie: Movie) {
     const httpOptions = {
       headers: new HttpHeaders({
-        'Content-Type': 'application/json'
+        'Content-Type': 'application/json',
       }),
-      body: movie
+      body: movie,
     };
 
     return this.http.post(MovieService.API_URL, movie, httpOptions);
-
   }
 }

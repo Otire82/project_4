@@ -1,0 +1,22 @@
+.containerHome {
+    display: grid;
+    justify-content: center;
+margin-left: 200px;
+margin-right: 200px;
+padding: 20px;
+background-color: rgb(211, 208, 208);
+    }
+
+.titleHome {
+    font-size: 40px;
+    border: solid 10px black;
+    border-radius: 5%;
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.explication {
+    align-content: center;
+    text-align: center;
+    padding: 35px;
+}

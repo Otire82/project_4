@@ -1,1 +1,10 @@
-/* You can add global styles to this file, and also import other style files */
+p, ul, li {
+    font-size: 18px;
+    font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif ;
+}
+
+* {
+border: 0;
+background-color: rgb(84, 84, 84);
+color: rgb(194, 213, 234);
+}
