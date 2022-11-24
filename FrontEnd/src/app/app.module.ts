@@ -32,7 +32,7 @@ import { ReactiveFormsModule } from '@angular/forms';
     UpdatePageComponent,
     CreatePageComponent,
     MovieListComponent,
-    MovieListItemComponent
+    MovieListItemComponent,
   ],
   imports: [
     BrowserModule,
@@ -41,6 +41,6 @@ import { ReactiveFormsModule } from '@angular/forms';
     ReactiveFormsModule,
   ],
   providers: [],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
 })
-export class AppModule { }
+export class AppModule {}
