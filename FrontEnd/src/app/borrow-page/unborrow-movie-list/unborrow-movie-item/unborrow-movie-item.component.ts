@@ -21,6 +21,8 @@ export class UnborrowMovieItemComponent implements OnInit {
 
   deleteBorrow(id: number): void {
     this.movie.isBorrow = !this.movie.isBorrow;
-    this.movieService.updateMovie(id, this.movie).subscribe(() => this.refresh.emit());
+    this.movieService
+      .updateMovie(id, this.movie)
+      .subscribe(() => this.refresh.emit());
   }
 }
