@@ -12,17 +12,17 @@
 <td class="list descriptif">{{ movie.descriptif }}</td>
 <td class="list">
   <a href="#" [routerLink]="['/movie/', movie.id]"
-    ><button class="btn">Detail</button></a
+    ><button class="btn">DETAIL</button></a
   >
 </td>
 <td class="list">
-  <button class="btn" (click)="handleDelete()">Supprimer</button>
+  <button class="btn" (click)="handleDelete()">SUPPRIMER</button>
 </td>
 <td class="list">
   <a [routerLink]="['/update', movie.id]"
-    ><button class="btn">Mettre a jour</button></a
+    ><button class="btn">METTRE A JOUR</button></a
   >
 </td>
 <td class="list" *ngIf="movie.id">
-  <button class="btn" (click)="addBorrow(movie.id)">Emprunter</button>
+  <button class="btn" (click)="addBorrow(movie.id)">EMPRUNTER</button>
 </td>
