@@ -3,9 +3,10 @@
     margin: 5% 20% 10% 20%;
     text-align: center;
     font-style: bold;
-    font-size: 20px;
+    font-size: 22px;
     padding: 10px;
     align-items: center;
+    background-color: rgb(84, 84, 84);
 }
 
 .form {
@@ -19,24 +20,33 @@
 .form-style input {
   min-width: 500px;
   height: 30px;
-  font-size: 16px;
+  font-size: 18px;
   text-align: center;
   margin-bottom: 30px;
   border-radius: 5px;
   border: 2px solid rgb(230, 135, 46);
+  color: rgba(0, 0, 0, 0.474);
 }
 
 .form-style textarea {
   min-width: 500px;
   height: 300px;
-  font-size: 14px;
+  font-size: 18px;
   text-align: center;
   margin-bottom: 30px;
   border-radius: 5px;
   border: 2px solid rgb(230, 135, 46);
+  color: rgba(0, 0, 0, 0.474);
 }
 .invalidInput {
   color: red;
+}
+
+.error{
+  color: red;
+  margin-bottom: 30px;
+  font-style: italic;
+  font-size: 25px;
 }
 
 .btn {
