@@ -1,6 +1,8 @@
 li{
     list-style: none;
     border: 1px solid orange;
+    margin: 1%;
+    padding: 1%;
 }
 
 .btn {

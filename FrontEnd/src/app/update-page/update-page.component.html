@@ -1,10 +1,10 @@
 <div class="formContainer">
-  <h2>Update Movie</h2>
+  <h2>Mettre à jour le film</h2>
   <a href="#" routerLink="/movies" class="btn">RETOUR</a>
 
   <form class="form" [formGroup]="form" (ngSubmit)="submit()">
     <div class="form-style">
-      <label for="title">Title :</label>
+      <label for="title">Titre :</label>
       <input
         formControlName="title"
         id="title"
@@ -16,13 +16,13 @@
         *ngIf="f['title'].touched && f['title'].invalid"
         class="invalidInput"
       >
-        <div *ngIf="f['title'].errors && f['title'].errors['required']">
-          Title is required.
+        <div class="error" *ngIf="f['title'].errors && f['title'].errors['required']">
+          Le titre est requis.
         </div>
       </div>
     </div>
     <div class="form-style">
-      <label for="picture">Picture :</label>
+      <label for="picture">URL de la jaquette :</label>
       <input
         formControlName="picture"
         id="picture"
@@ -34,8 +34,8 @@
         *ngIf="f['picture'].touched && f['picture'].invalid"
         class="invalidInput"
       >
-        <div *ngIf="f['picture'].errors && f['picture'].errors['required']">
-          Url is required.
+        <div class="error" *ngIf="f['picture'].errors && f['picture'].errors['required']">
+          L'URL est requis.
         </div>
       </div>
     </div>
@@ -47,13 +47,13 @@
         *ngIf="f['genre'].touched && f['genre'].invalid"
         class="invalidInput"
       >
-        <div *ngIf="f['genre'].errors && f['genre'].errors['required']">
-          Genre is required.
+        <div class="error" *ngIf="f['genre'].errors && f['genre'].errors['required']">
+          Le genre est requis.
         </div>
       </div>
     </div>
     <div class="form-style">
-      <label for="descriptif">Descriptif :</label>
+      <label for="descriptif">Synopsis :</label>
       <textarea
         formControlName="descriptif"
         id="descriptif"
@@ -65,10 +65,10 @@
         *ngIf="f['descriptif'].touched && f['descriptif'].invalid"
         class="invalidInput"
       >
-        <div
+        <div class="error"
           *ngIf="f['descriptif'].errors && f['descriptif'].errors['required']"
         >
-          Descriptif is required.
+          Le Synopsis est requis.
         </div>
       </div>
     </div>

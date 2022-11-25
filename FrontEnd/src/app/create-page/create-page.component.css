@@ -1,7 +1,9 @@
 .container {
   text-align: center;
-  margin-top: 10%;
+  margin: 5%;
+  padding: 2%;
   font-size: 20px;
+  background-color: rgb(84, 84, 84);
 }
 
 h2{

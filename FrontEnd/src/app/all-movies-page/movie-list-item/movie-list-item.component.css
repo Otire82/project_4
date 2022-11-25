@@ -1,6 +1,10 @@
+*{
+  background-color: rgb(84, 84, 84);
+}
+
 .list{
     border: black solid 2px;
-    font-size: 16px;
+    font-size: 18px;
 }
 
 .descriptif{
